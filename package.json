@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "greet": "node index.js",
     "release": "standard-version",
     "test": "echo \"There is no test in this proyect\" && exit 1"
   },
@@ -34,5 +35,8 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "figlet": "^1.2.4"
   }
 }
