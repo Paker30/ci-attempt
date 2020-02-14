@@ -1,0 +1,38 @@
+{
+  "name": "ci-attempt",
+  "version": "1.0.0",
+  "description": "test automatic PR after merge",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "release": "standard-version",
+    "test": "echo \"There is no test in this proyect\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paker30/ci-attempt.git"
+  },
+  "author": "paker <morenocfrancisco86@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Paker30/ci-attempt/issues"
+  },
+  "homepage": "https://github.com/Paker30/ci-attempt#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "commitizen": "^4.0.3",
+    "husky": "^4.2.3",
+    "standard-version": "^7.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
