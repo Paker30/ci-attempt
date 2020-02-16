@@ -5,6 +5,7 @@ node_js:
 before_install:
     - npm i -g simple-git
     - chmod -R +x bin/*.js
+    - npm link
 jobs:
   include:
     - stage: build
