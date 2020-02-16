@@ -5,11 +5,10 @@ node_js:
 before_install:
     - npm i -g simple-git
     - chmod -R +x bin/*.js
-stages:
-    - name: release
-      if: branch = master
-        - npm i
-        - create-branch
-        - npm run release
-        - follow-tags
-        - create-PR
+
+if: branch = master
+  - npm i
+  - create-branch
+  - npm run release
+  - follow-tags
+  - create-PR
