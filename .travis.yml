@@ -6,11 +6,15 @@ before_install:
     - npm i -g simple-git
     - chmod -R +x bin/*.js
 jobs:
-    include:
-        - stage: script
-          if: branch = master
-              - npm i
-              - create-branch
-              - npm run release
-              - follow-tags
-              - create-PR
+  include:
+    - stage: build
+      script:
+        - echo CREATE PR
+        - npm i
+        - create-branch
+        - npm run release
+        - follow-tags
+        - create-PR
+stages:
+  - name: build
+    if: (branch = master)
