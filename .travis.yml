@@ -5,12 +5,8 @@ node_js:
 before_install:
     - npm i -g simple-git
     - chmod -R +x bin/*.js
-jobs:
-    include:
-        - stage: script
-          if: branch = master
-              - npm i
-              - create-branch
-              - npm run release
-              - follow-tags
-              - create-PR
+script:
+    if: branch = master
+        - echo MASTER
+    if: branch = build_ci_third_attempt
+        - echo otra rama
