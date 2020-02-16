@@ -12,7 +12,7 @@ jobs:
       script:
         - echo CREATE PR
         - npm i
-        - create-branch
+        - create-branch $GIT_USER $GIT_PASSWORD $REPO
         - npm run release
         - follow-tags
         - create-PR
