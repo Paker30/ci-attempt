@@ -1,6 +1,9 @@
-#!/usr/bin/env node
+#!/usr/bin/env
 
 const Git = require('simple-git/promise');
+const repoUrl = `https://${$GIT_USER}:${$GIT_PASSWORD}@github.com/${GIT_USER}/${$REPO}`; 
+
+Git.addRemote('origin', repoUrl);
 
 Git().revparse(['--short', 'HEAD']).then((sha) => {
     return Git().checkoutBranch(`release/${sha}`, 'master')
