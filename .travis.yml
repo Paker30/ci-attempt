@@ -7,6 +7,6 @@ before_install:
     - chmod -R +x bin/*.js
 script:
     if: branch = master
-        - echo MASTER
+        - echo "MASTER"
     if: branch = build_ci_third_attempt
-        - echo otra rama
+        - echo "otra rama"
