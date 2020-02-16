@@ -7,10 +7,11 @@ const gitPassword = process.argv[3];
 const gitRepo = process.argv[4];
 const repoUrl = `https://${gitUser}:${gitPassword}@github.com/${gitUser}/${gitRepo}`;
 
-Git().revparse(['--abbrev-ref', 'HEAD']).then((currentBranch) =>
-    Promise.all([
+Git().revparse(['--abbrev-ref', 'HEAD'])
+    .then((currentBranch) => Promise.all([
         Git().push(repoUrl, currentBranch)
         , Git().pushTags(repoUrl)
-    ])
-        .then((status) => console.log('push tags', status))
-        .catch((error) => console.error('something went wrong', error));
+    ]))
+    .then((status) => console.log('push tags', status))
+    .catch((error) => console.error('something went wrong', error));
+
