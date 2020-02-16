@@ -11,7 +11,7 @@ Git().addRemote('origin', repoUrl);
 
 Git().revparse(['--short', 'HEAD']).then((sha) => {
     return Git().checkoutBranch(`release/${sha}`, 'master')
-        .then(Git().push('origin', `release/${sha}`, ['--set-upstream']))
+        .then(Git().push('origin', `release/${sha}`))
         .then(() => console.log(`create branch release/${sha}`))
     })
     .catch((error) => console.error('something went wrong', error));
