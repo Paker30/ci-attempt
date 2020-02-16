@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+    - node
+    - 12
+before_install:
+    - npm i -g simple-git
+    - chmod -R +x bin/*.js
+stages:
+    - name: release
+      if: branch = master
+        - npm i
+        - create-branch
+        - npm run release
+        - follow-tags
+        - create-PR
