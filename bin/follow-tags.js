@@ -14,3 +14,4 @@ Git().revparse(['--abbrev-ref', 'HEAD'])
     ]))
     .then((status) => console.log('push tags', status))
     .catch((error) => console.error('something went wrong', error));
+
