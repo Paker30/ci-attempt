@@ -4,10 +4,15 @@
   "description": "test automatic PR after merge",
   "main": "index.js",
   "private": true,
+  "bin": {
+    "create-branch": "bin/create-branch.js",
+    "create-PR": "bin/create-PR.js",
+    "follow-tags": "bin/follow-tags.js"
+  },
   "scripts": {
     "greet": "node index.js",
     "release": "standard-version",
-    "test": "echo \"There is no test in this proyect\" && exit 1"
+    "test": "echo \"There is no test in this proyect\" && exit 0"
   },
   "repository": {
     "type": "git",
@@ -37,6 +42,7 @@
     }
   },
   "dependencies": {
-    "figlet": "^1.2.4"
+    "figlet": "^1.2.4",
+    "simple-git": "^1.131.0"
   }
 }
