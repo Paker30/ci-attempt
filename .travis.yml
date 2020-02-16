@@ -5,8 +5,16 @@ node_js:
 before_install:
     - npm i -g simple-git
     - chmod -R +x bin/*.js
-script:
-    if: branch = master
-        - echo "MASTER"
-    if: branch = build_ci_third_attempt
-        - echo "otra rama"
+jobs:
+  include:
+    - stage: test
+      script:
+        - echo otra rama
+    - stage: build
+      script:
+        - echo hola
+stages:
+  - name: build
+    if: (branch = build_ci_third_attempt)
+  - name: test
+    if: (branch = build_ci_third_attempt)
