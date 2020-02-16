@@ -7,14 +7,14 @@ before_install:
     - chmod -R +x bin/*.js
 jobs:
   include:
-    - stage: test
-      script:
-        - echo otra rama
     - stage: build
       script:
-        - echo hola
+        - echo CREATE PR
+        - npm i
+        - create-branch
+        - npm run release
+        - follow-tags
+        - create-PR
 stages:
   - name: build
-    if: (branch = build_ci_third_attempt)
-  - name: test
-    if: (branch = build_ci_third_attempt)
+    if: (branch = master)
