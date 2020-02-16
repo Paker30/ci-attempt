@@ -1,7 +1,9 @@
 #!/usr/bin/env
 
 const Git = require('simple-git/promise');
-const repoUrl = `https://${$GIT_USER}:${$GIT_PASSWORD}@github.com/${GIT_USER}/${$REPO}`; 
+const repoUrl = `https://${$GIT_USER}:${$GIT_PASSWORD}@github.com/${GIT_USER}/${$REPO}`;
+
+console.log(repoUrl);
 
 Git.addRemote('origin', repoUrl);
 
