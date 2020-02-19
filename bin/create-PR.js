@@ -10,4 +10,4 @@ const repoUrl = `https://${gitUser}:${gitPassword}@github.com/${gitUser}/${gitRe
 Git().revparse(['--abbrev-ref', 'HEAD'])
     .then((currentBranch) => Git().raw(['request-pull', '-p', 'master', './']))
     .then((status) => console.log('create PR', status))
-    .catch((error) => console.error('something went wrong', error));
+    .catch((error) => console.error('something went wrong', error), process.exit(1));
