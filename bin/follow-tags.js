@@ -13,5 +13,5 @@ Git().revparse(['--abbrev-ref', 'HEAD'])
         , Git().pushTags(repoUrl)
     ]))
     .then((status) => console.log('push tags', status))
-    .catch((error) => console.error('something went wrong', error));
+    .catch((error) => console.error('something went wrong', error), process.exit(1));
 

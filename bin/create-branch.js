@@ -12,4 +12,4 @@ Git().revparse(['--short', 'HEAD']).then((sha) => {
         .then(Git().push(repoUrl, `release/${sha}`, ['--set-upstream']))
         .then(() => console.log(`create branch release/${sha}`))
     })
-    .catch((error) => console.error('something went wrong', error));
+    .catch((error) => console.error('something went wrong', error), process.exit(1));
