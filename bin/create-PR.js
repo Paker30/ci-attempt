@@ -15,4 +15,4 @@ Git().revparse(['--abbrev-ref', 'HEAD'])
             head: currentBranch
         }))
     .then((status) => console.log('pull request created', status))
-    .catch((error) => console.error('something went wrong creating the pull request', error);
+    .catch((error) => console.error('something went wrong creating the pull request', error));
