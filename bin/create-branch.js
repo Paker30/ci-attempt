@@ -8,7 +8,7 @@ const gitRepo = process.argv[3].split('.')[0];
 const gitToken = process.argv[4];
 
 Git().revparse(['--short', 'HEAD']).then((sha) => {
-    return Axios.post(`https://api.github.com/repos/${gitUser}/${gitRepo}/refs`, {
+    return Axios.post(`https://api.github.com/repos/${gitUser}/${gitRepo}/git/refs`, {
         ref: `refs/heads/release${sha}`,
         sha: sha
     }, {
