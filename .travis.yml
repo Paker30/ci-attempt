@@ -12,9 +12,8 @@ jobs:
       script:
         - echo CREATE PR
         - npm i
-        - create-branch $GIT_USER $GIT_PASSWORD $REPO
+        - create-branch
         - npm run release
-        - follow-tags $GIT_USER $GIT_PASSWORD $REPO
         - create-PR $GIT_USER $REPO $GIT_TOKEN
 stages:
   - name: build
