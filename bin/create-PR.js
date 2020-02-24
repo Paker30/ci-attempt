@@ -15,7 +15,7 @@ Git().revparse(['--abbrev-ref', 'HEAD'])
             base: 'master',
             head: currentBranch
         }, {
-            headers: { 'Authorization':  `token ${gitToken}`}
+            headers: { 'Authorization': `token ${gitToken}`, 'Content-Type': 'application/json' }
         }))
     .then((status) => console.log('pull request created', status))
     .catch((error) => console.error('something went wrong creating the pull request', error));
