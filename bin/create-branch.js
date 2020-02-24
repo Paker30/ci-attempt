@@ -16,6 +16,6 @@ Git().revparse(['HEAD']).then((sha) => {
     })
         .then(() => console.log(`create branch release/${sha.slice(0,7)}`))
         .then(() => Git().fetch())
-        .then(() => Git().checkoutLocalBranch(`release/${sha.slice(0,7)}`));
+        .then(() => Git().checkout(`release/${sha.slice(0,7)}`));
 })
     .catch((error) => console.error('something went wrong', error));
