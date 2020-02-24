@@ -9,7 +9,7 @@ const gitToken = process.argv[4];
 
 Git().revparse(['HEAD']).then((sha) => {
     const shortSha = sha.slice(0, 7);
-    return Axios.put(`https://api.github.com/repos/${gitUser}/${gitRepo}/git/refs/origin/try_again`, {
+    return Axios.patch(`https://api.github.com/repos/${gitUser}/${gitRepo}/git/refs/heads/${shortSha}`, {
         sha: sha
     }, {
         headers: { 'Authorization': `token ${gitToken}` }
