@@ -16,6 +16,8 @@ Git().revparse(['HEAD']).then((sha) => {
         headers: { 'Authorization': `token ${gitToken}` }
     })
         .then(() => console.log(`create branch release/${shortSha}`))
+        .then(() => Git().branch(['-a']))
+        .then((branches) => console.log('branches', branches))
         .then(() => Git().fetch(`https://github.com/${gitUser}/${gitRepo}.git`, 'master'))
         .then(() => Git().checkout(`release/${shortSha}`));
 })
