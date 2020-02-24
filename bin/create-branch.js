@@ -4,7 +4,7 @@ const Git = require('simple-git/promise');
 const Axios = require('axios');
 
 const gitUser = process.argv[2];
-const gitRepo = process.argv[3].split('.')[0];
+const gitRepo = process.argv[3];
 const gitToken = process.argv[4];
 
 Git().revparse(['HEAD']).then((sha) => {
