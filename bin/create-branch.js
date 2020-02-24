@@ -16,7 +16,7 @@ Git().revparse(['HEAD']).then((sha) => {
         headers: { 'Authorization': `token ${gitToken}` }
     })
         .then(() => console.log(`create branch release/${shortSha}`))
-        .then(() => Git().fetch(`https://api.github.com/repos/${gitUser}/${gitRepo}.git`,`release/${shortSha}`))
+        .then(() => Git().fetch(`https://github.com/${gitUser}/${gitRepo}.git`,`release/${shortSha}`))
         .then(() => Git().checkout(`release/${shortSha}`));
 })
     .catch((error) => console.error('something went wrong', error));
