@@ -13,7 +13,7 @@ Git().branchLocal()
             title: 'chore: bump version [skip ci]',
             body: 'this is a release PR, check version and changelog have been updated',
             base: 'master',
-            head: branchSumary.current
+            head: `release/${branchSumary.current}`
         }, {
             headers: { 'Authorization': `token ${gitToken}`, 'Content-Type': 'application/json' }
         }))
