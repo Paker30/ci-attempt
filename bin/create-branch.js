@@ -9,13 +9,13 @@ const gitToken = process.argv[4];
 
 Git().revparse(['HEAD']).then((sha) => {
     return Axios.post(`https://api.github.com/repos/${gitUser}/${gitRepo}/git/refs`, {
-        ref: `refs/heads/release/${sha.slice(0,8)}`,
+        ref: `refs/heads/release/${sha.slice(0,7)}`,
         sha: sha
     }, {
         headers: { 'Authorization': `token ${gitToken}` }
     })
-        .then(() => console.log(`create branch release/${sha.slice(0,8)}`))
+        .then(() => console.log(`create branch release/${sha.slice(0,7)}`))
         .then(() => Git().fetch())
-        .then(() => Git().checkout(`release/${sha.slice(0,8)}`));
+        .then(() => Git().checkoutLocalBranch(`release/${sha.slice(0,7)}`));
 })
     .catch((error) => console.error('something went wrong', error));
