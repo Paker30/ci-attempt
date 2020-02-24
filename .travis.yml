@@ -14,6 +14,7 @@ jobs:
         - npm i
         - create-branch $GIT_USER $REPO $GIT_TOKEN
         - npm run release
+        - follow-tags $GIT_USER $REPO $GIT_TOKEN
         - create-PR $GIT_USER $REPO $GIT_TOKEN
 stages:
   - name: build
