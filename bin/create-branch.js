@@ -8,14 +8,15 @@ const gitRepo = process.argv[3];
 const gitToken = process.argv[4];
 
 Git().revparse(['HEAD']).then((sha) => {
+    const shortSha = sha.slice(0,7);
     return Axios.post(`https://api.github.com/repos/${gitUser}/${gitRepo}/git/refs`, {
-        ref: `refs/heads/release/${sha.slice(0,7)}`,
+        ref: `refs/heads/release/${shortSha}`,
         sha: sha
     }, {
         headers: { 'Authorization': `token ${gitToken}` }
     })
-        .then(() => console.log(`create branch release/${sha.slice(0,7)}`))
-        .then(() => Git().fetch())
-        .then(() => Git().checkout(`release/${sha.slice(0,7)}`));
+        .then(() => console.log(`create branch release/${shortSha}`))
+        .then(() => Git().fetch(`https://api.github.com/repos/${gitUser}/${gitRepo}.git`,`release/${shortSha}`))
+        .then(() => Git().checkout(`release/${shortSha}`));
 })
     .catch((error) => console.error('something went wrong', error));
