@@ -3,7 +3,12 @@
 const Git = require('simple-git/promise');
 
 Git().revparse(['--short', 'HEAD']).then((sha) => {
-    return Git().checkoutBranch(`release/${sha}`, 'master')
-        .then(() => console.log(`create branch release/${sha}`))
+    return Axios.post(`https://api.github.com/repos/${gitUser}/${gitRepo}/refs`, {
+        ref: `refs/heads/release${sha}`,
+        sha: sha
+    }, {
+        headers: { 'Authorization': `token ${gitToken}` }
     })
+        .then(() => console.log(`create branch release/${sha}`))
+})
     .catch((error) => console.error('something went wrong', error));
