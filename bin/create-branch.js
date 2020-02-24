@@ -19,6 +19,6 @@ Git().revparse(['HEAD']).then((sha) => {
         .then(() => Git().branch(['-a']))
         .then((branches) => console.log('branches', branches))
         .then(() => Git().fetch(`https://github.com/${gitUser}/${gitRepo}.git`, 'master'))
-        .then(() => Git().checkout(`release/${shortSha}`));
+        .then(() => Git().checkout(`${shortSha}`));
 })
     .catch((error) => console.error('something went wrong', error));
