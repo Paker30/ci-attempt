@@ -7,9 +7,10 @@ const gitUser = process.argv[2];
 const gitRepo = process.argv[3];
 const gitToken = process.argv[4];
 
+const currentBranch = Git().revparse(['--abbrev-ref', 'HEAD']);
+
 Git().revparse(['HEAD']).then((sha) => {
-    const shortSha = sha.slice(0, 7);
-    return Axios.patch(`https://api.github.com/repos/${gitUser}/${gitRepo}/git/refs/heads/release/${shortSha}`, {
+    return Axios.patch(`https://api.github.com/repos/${gitUser}/${gitRepo}/git/refs/heads/release/${currentBranch}`, {
         sha: sha
     }, {
         headers: { 'Authorization': `token ${gitToken}` }
