@@ -10,7 +10,7 @@ const gitToken = process.argv[4];
 Git().branch()
     .then(({ current }) =>
         Git().revparse(['HEAD']).then((sha) => {
-            return Axios.patch(`https://api.github.com/repos/${gitUser}/${gitRepo}/git/refs/heads/release/${CurrentBranch()}`, {
+            return Axios.patch(`https://api.github.com/repos/${gitUser}/${gitRepo}/git/refs/heads/release/${current}`, {
                 sha: sha
             }, {
                 headers: { 'Authorization': `token ${gitToken}` }
