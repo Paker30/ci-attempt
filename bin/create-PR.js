@@ -2,14 +2,13 @@
 
 const Git = require('simple-git/promise');
 const Axios = require('axios');
-const CurrentBranch = require('current-git-branch');
 
 const gitUser = process.argv[2];
 const gitRepo = process.argv[3];
 const gitToken = process.argv[4];
 
-Git().revparse(['--abbrev-ref', 'HEAD'])
-    .then((currentBranch) =>
+Git().branch()
+    .then(({ current }) =>
         Git().revparse(['HEAD']).then((sha) => {
             return Axios.patch(`https://api.github.com/repos/${gitUser}/${gitRepo}/git/refs/heads/release/${CurrentBranch()}`, {
                 sha: sha
