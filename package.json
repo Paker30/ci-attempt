@@ -2,7 +2,6 @@
   "name": "ci-attempt",
   "version": "2.0.0",
   "description": "test automatic PR after merge",
-  "main": "index.js",
   "private": true,
   "bin": {
     "create-branch": "bin/create-branch.js",
