@@ -15,4 +15,3 @@ Git().branch()
     })
     .then(() => console.log('push tags'))
     .catch((error) => console.error('something went wrong', error));
-
