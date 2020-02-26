@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
+
 * **exit:** end process if a script fails ([da31716](https://github.com/Paker30/ci-attempt/commit/da31716cda450c9d429546aa645d7764fdd82e6f))
 * right way to pull request ([52b6182](https://github.com/Paker30/ci-attempt/commit/52b6182779d5893c7be6082954743df558f93057))
 * **ci:** add git credentialjs ([b27cdcd](https://github.com/Paker30/ci-attempt/commit/b27cdcdf6c90df466168a014e51025e3d6b3a725))
@@ -16,11 +17,20 @@ All notable changes to this project will be documented in this file. See [standa
 * **ci:** maybe I have understand jobs ([7df7684](https://github.com/Paker30/ci-attempt/commit/7df768456bc48c2eb7a03bc1b3e78e0e88c5fefa))
 * **ci:** print conditional ([5abaeb3](https://github.com/Paker30/ci-attempt/commit/5abaeb325bfdb190dbd764e53abcede4571ce810))
 * **ci:** try only with if ([de4c439](https://github.com/Paker30/ci-attempt/commit/de4c4393ec8fd090977c87cd847291412bbeef72))
+* **exit:** end process if a script fails ([da31716](https://github.com/Paker30/ci-attempt/commit/da31716cda450c9d429546aa645d7764fdd82e6f))
+* **hi:** add second line to hi ([56d25c3](https://github.com/Paker30/ci-attempt/commit/56d25c324a8745862867d21144e03ea858422fd4))
+* **hi:** increase message ([5aea0da](https://github.com/Paker30/ci-attempt/commit/5aea0daae205dbba28d171c265cd5c032f7aa020))
+* **token:** add credentials to pr request ([67d6147](https://github.com/Paker30/ci-attempt/commit/67d614757ff894379d66889140e29f907bd73659))
 * prettify great ([c88ab52](https://github.com/Paker30/ci-attempt/commit/c88ab525c370abaa0d45431cea7223923c37e582))
+* right way to pull request ([52b6182](https://github.com/Paker30/ci-attempt/commit/52b6182779d5893c7be6082954743df558f93057))
+
 
 
 ### Bug Fixes
 
+
+* **repo:** api call needs the repo name without the extension ([92df1c7](https://github.com/Paker30/ci-attempt/commit/92df1c7a85c75d34c79a1025be2adc2b28d84427))
+* missing parentheses ([9cddd91](https://github.com/Paker30/ci-attempt/commit/9cddd9163168a13ea42506c3a8c3924b41e9e8d1))
 * undo process.exit ([c0468ca](https://github.com/Paker30/ci-attempt/commit/c0468ca302687fe681e55e646e6c78bf85d4a289))
 * **ci:** create-branch does not publish branch ([2ef3d53](https://github.com/Paker30/ci-attempt/commit/2ef3d53a3dbda58f2a074b171e20b33a5b5a8cd5))
 * **ci:** if can not be alone ([b3f40e2](https://github.com/Paker30/ci-attempt/commit/b3f40e222ae7efb02b4a960890a87f14e25de70e))
