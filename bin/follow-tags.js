@@ -9,7 +9,7 @@ const repoUrl = `https://${gitToken}@github.com/${gitUser}/${gitRepo}.git`;
 
 Git().branch()
     .then(({current}) => Promise.all([
-        Git().push(repoUrl, current)
+        Git().push(repoUrl, `release/${current}`)
         , Git().pushTags(repoUrl)
     ]))
     .then((status) => console.log('push tags', status))
