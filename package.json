@@ -10,7 +10,7 @@
   },
   "scripts": {
     "greet": "node index.js",
-    "release": "standard-version && git commit -m 'chore(release): $npm_package_version [skip ci]' ",
+    "release": "standard-version",
     "test": "echo \"There is no test in this proyect\""
   },
   "repository": {
