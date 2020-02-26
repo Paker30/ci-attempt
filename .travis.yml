@@ -12,9 +12,10 @@ jobs:
       script:
         - echo CREATE PR
         - npm i
-        - create-branch $GIT_USER $REPO $GIT_TOKEN
+        - create-branch $GIT_USER $GIT_TOKEN $REPO
         - npm run release
-        - create-PR $GIT_USER $REPO $GIT_TOKEN
+        - follow-tags $GIT_USER $GIT_TOKEN $REPO
+        - create-PR $GIT_USER $GIT_TOKEN $REPO
 stages:
   - name: build
     if: (branch = master)

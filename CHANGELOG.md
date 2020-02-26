@@ -2,11 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## 1.1.0 (2020-02-21)
+## 1.1.0 (2020-02-20)
 
 
 ### Features
 
+
+* **exit:** end process if a script fails ([da31716](https://github.com/Paker30/ci-attempt/commit/da31716cda450c9d429546aa645d7764fdd82e6f))
+* right way to pull request ([52b6182](https://github.com/Paker30/ci-attempt/commit/52b6182779d5893c7be6082954743df558f93057))
 * **ci:** add git credentialjs ([b27cdcd](https://github.com/Paker30/ci-attempt/commit/b27cdcdf6c90df466168a014e51025e3d6b3a725))
 * **ci:** define script with ifs ([4d3eda7](https://github.com/Paker30/ci-attempt/commit/4d3eda7be10f5c5bb40050655d310745b70f195a))
 * **ci:** first attemp to create automatic PR ([ebc8632](https://github.com/Paker30/ci-attempt/commit/ebc863215115055b9d3b2510d5699503c8fff246))
@@ -22,7 +25,9 @@ All notable changes to this project will be documented in this file. See [standa
 * right way to pull request ([52b6182](https://github.com/Paker30/ci-attempt/commit/52b6182779d5893c7be6082954743df558f93057))
 
 
+
 ### Bug Fixes
+
 
 * **repo:** api call needs the repo name without the extension ([92df1c7](https://github.com/Paker30/ci-attempt/commit/92df1c7a85c75d34c79a1025be2adc2b28d84427))
 * missing parentheses ([9cddd91](https://github.com/Paker30/ci-attempt/commit/9cddd9163168a13ea42506c3a8c3924b41e9e8d1))

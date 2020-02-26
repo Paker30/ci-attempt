@@ -4,8 +4,9 @@ const Git = require('simple-git/promise');
 const Axios = require('axios');
 
 const gitUser = process.argv[2];
-const gitRepo = process.argv[3];
-const gitToken = process.argv[4];
+const gitToken = process.argv[3];
+const gitRepo = process.argv[4];
+const repoUrl = `https://${gitToken}@github.com/${gitUser}/${gitRepo}.git`;
 
 Git().revparse(['HEAD']).then((sha) => {
     const shortSha = sha.slice(0,7);
