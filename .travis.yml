@@ -21,6 +21,6 @@ jobs:
         - echo DEPLOY version
 stages:
   - name: build
-    if: (NOT type IN (pull_request)) AND (branch = master)
+    if: (NOT $TRAVIS_EVENT_TYPE IN (pull_request)) AND (branch = master)
   - name: release
     if: (branch = release/*)
