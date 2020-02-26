@@ -8,7 +8,7 @@ const gitRepo = process.argv[4];
 const repoUrl = `https://${gitToken}@github.com/${gitUser}/${gitRepo}.git`;
 
 Git().branch()
-    .then(({ current }) => Git().push(repoUrl, current))
+    .then(({ current }) => Git().push(repoUrl, `release/${current}`))
     .then(() => {
         console.log('push files');
         return Git().pushTags(repoUrl);
