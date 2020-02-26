@@ -8,10 +8,13 @@ const gitRepo = process.argv[4];
 const repoUrl = `https://${gitToken}@github.com/${gitUser}/${gitRepo}.git`;
 
 Git().branch()
-    .then(({current}) => Promise.all([
-        // Git().push(repoUrl, `release/${current}`)
-        , Git().pushTags(repoUrl)
-    ]))
+    .then(({ current }) => {
+        console.log('current branch:', current);
+        return Promise.all([
+            Git().push(repoUrl, current)
+            , Git().pushTags(repoUrl)
+        ])
+    })
     .then((status) => console.log('push tags', status))
     .catch((error) => console.error('something went wrong', error));
 
