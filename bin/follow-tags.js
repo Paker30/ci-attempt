@@ -7,9 +7,9 @@ const gitToken = process.argv[3];
 const gitRepo = process.argv[4];
 const repoUrl = `https://${gitToken}@github.com/${gitUser}/${gitRepo}.git`;
 
-Git().revparse(['--abbrev-ref', 'HEAD'])
-    .then((currentBranch) => Promise.all([
-        Git().push(repoUrl, currentBranch)
+Git().branch()
+    .then(({current}) => Promise.all([
+        Git().push(repoUrl, current)
         , Git().pushTags(repoUrl)
     ]))
     .then((status) => console.log('push tags', status))
