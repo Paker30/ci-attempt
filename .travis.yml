@@ -16,6 +16,11 @@ jobs:
         - npm run release
         - follow-tags $GIT_USER $GIT_TOKEN $REPO
         - create-PR $GIT_USER $GIT_TOKEN $REPO
+    - stage: release
+      script:
+        - echo DEPLOY version
 stages:
   - name: build
-    if: (branch = master)
+    if: (NOT type IN (pull_request)) AND (branch = master)
+  - name: release
+    if: (branch = release/*)
