@@ -10,7 +10,7 @@ const gitRepo = process.argv[4];
 Git().branch()
     .then(({current}) =>
         Axios.post(`https://api.github.com/repos/${gitUser}/${gitRepo}/pulls`, {
-            title: 'chore: bump version',
+            title: 'chore: bump version [skip ci]',
             body: 'this is a release PR, check version and changelog have been updated',
             base: 'master',
             head: current
