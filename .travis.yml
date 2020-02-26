@@ -9,18 +9,19 @@ before_install:
 jobs:
   include:
     - stage: build
+      name: "CREATE PR"
       script:
-        - echo CREATE PR
         - npm i
         - create-branch $GIT_USER $GIT_TOKEN $REPO
         - npm run release
         - follow-tags $GIT_USER $GIT_TOKEN $REPO
         - create-PR $GIT_USER $GIT_TOKEN $REPO
     - stage: release
+      name: "DEPLOY RELEASE"
       script:
-        - echo DEPLOY version
+        - echo desplegar
 stages:
   - name: build
-    if: (NOT $TRAVIS_EVENT_TYPE IN (pull_request)) AND (branch = master)
+    if: type != pull_request AND branch = master
   - name: release
-    if: (branch = release/*)
+    if: branch =~ /release\/.*/
