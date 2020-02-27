@@ -10,7 +10,7 @@ const repoUrl = `https://${gitToken}@github.com/${gitUser}/${gitRepo}.git`;
 
 Git().revparse(['--short', 'HEAD']).then((sha) => {
     return Git().checkoutBranch(`release/${sha}`, 'master')
-        .then(Git().push(repoUrl, `release/${sha}`, ['--set-upstream']))
+        .then(() => Git().push(repoUrl, `release/${sha}`, ['--set-upstream']))
         .then(() => console.log(`create branch release/${sha}`))
 })
     .catch((error) => console.error('something went wrong', error));
