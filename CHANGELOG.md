@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.5](https://github.com/Paker30/ci-attempt/compare/v3.0.4...v3.0.5) (2020-07-14)
+
+
+### Bug Fixes
+
+* it worked by chance ([de5e0c0](https://github.com/Paker30/ci-attempt/commit/de5e0c0f2cb2501701b778c4bf9b11fd30e4f245))
+
 ### [3.0.4](https://github.com/Paker30/ci-attempt/compare/v3.0.3...v3.0.4) (2020-02-26)
 
 ### [3.0.3](https://github.com/Paker30/ci-attempt/compare/v3.0.0...v3.0.3) (2020-02-26)
